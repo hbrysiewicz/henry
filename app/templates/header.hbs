@@ -1,27 +1,26 @@
+{{#if token}}
 <div class="header">
   <div class="container">
     <div class="row">
 
       <div class="col-md-3">
         <div class="logo">
-          <h1>{{#link-to 'index' tagNames='a'}}Olson Admin{{/link-to}}</h1>
+          <h1>{{#link-to 'index' tagNames='a'}}Admin{{/link-to}}</h1>
         </div>
       </div>
 
-      {{#if token}}
-        <div class="col-md-3">
-          <div class="row">
-            <div class="col-lg-10">
-              <div class="input-group form">
-                <input type="text" class="form-control" placeholder="Something...">
-                <span class="input-group-btn">
-                  <button class="btn btn-info" type="button">Search</button>
-                </span>
-              </div>
+      <div class="col-md-3">
+        <div class="row">
+          <div class="col-lg-10">
+            <div class="input-group form">
+              <input type="text" class="form-control" placeholder="Something...">
+              <span class="input-group-btn">
+                <button class="btn btn-info" type="button">Search</button>
+              </span>
             </div>
           </div>
         </div>
-      {{/if}}
+      </div>
 
       <div class="col-md-6">
         <div class="navbar navbar-inverse" role="banner">
@@ -32,7 +31,6 @@
           </div>
           <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
             <ul class="nav navbar-nav">
-              {{#if token}}
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-comments"></i> Chats <span class="label label-success">5</span> <b class="caret"></b></a>
 
@@ -79,12 +77,9 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">My Account <b class="caret"></b></a>
                 <ul class="dropdown-menu animated fadeInUp">
                   <li><a href="profile.html">Profile</a></li>
-                  <li><a href="login.html">Logout</a></li>
+                  <li>{{#link-to 'logout' tagNames='a'}}Logout{{/link-to}}</li>
                 </ul>
               </li>
-              {{else}}
-                <li>{{#link-to 'login' tagNames="a"}}Login{{/link-to}}</li>
-              {{/if}}
             </ul>
           </nav>
         </div>
@@ -92,3 +87,18 @@
     </div>
   </div>
 </div>
+
+{{else}}
+<div class="header">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <!-- Logo -->
+        <div class="logo text-center">
+          <h1>{{#link-to 'index' tagNames='a'}}Admin{{/link-to}}</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{{/if}}

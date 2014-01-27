@@ -13,15 +13,15 @@
         <br />
         <form class="form-horizontal" role="form" {{action login on="submit"}}>
           <div class="form-group">
-            <label class="col-lg-2 control-label">Username</label>
+            <label for="username" class="col-lg-2 control-label">Username</label>
             <div class="col-lg-10">
-              {{input classNames="form-control" placeholder="Username" value=username}}
+              {{input id="username" classNames="form-control" placeholder="Username" value=username}}
             </div>
           </div>
           <div class="form-group">
-            <label class="col-lg-2 control-label">Password</label>
+            <label for="password" class="col-lg-2 control-label">Password</label>
             <div class="col-lg-10">
-              {{input type="password" classNames="form-control" placeholder="Password" value=password}}
+              {{input type="password" id="password" classNames="form-control" placeholder="Password" value=password}}
             </div>
           </div>
           <div class="form-group">

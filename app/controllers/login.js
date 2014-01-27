@@ -2,12 +2,13 @@ App.LoginController = Ember.Controller.extend({
   token: localStorage.token,
 
   actions: {
-    login: {
+    login: function() {
       var self = this,
           data = this.getProperties('username', 'password');
 
+      console.log('login');
       self.set('errorMessage', null);
-      Ember.$.post('/auth.json', data).then(function(response) {
+      $.post('/auth', data).then(function(response) {
 
         self.set('errorMessage', response.message);
         if (response.success) {
@@ -22,18 +23,18 @@ App.LoginController = Ember.Controller.extend({
           }
         }
       });
-    },
-
-    tokenChanged: function() {
-      localStorage.token = this.get('token');
-    }.observes('token'),
-
-    reset: {
-      this.setProperties({
-        username: "",
-        password: "",
-        errorMessage: ""
-      });
     }
+  },
+
+  tokenChanged: function() {
+    localStorage.token = this.get('token');
+  }.observes('token'),
+
+  reset: function() {
+    this.setProperties({
+      username: "",
+      password: "",
+      errorMessage: ""
+    });
   }
-})
+});

@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<!-- Title here -->
-		<title>Title - Olson Kart</title>
+		<title>Edit Profile - Olson Kart</title>
 		<!-- Description, Keywords and Author -->
 		<meta name="description" content="Your description">
 		<meta name="keywords" content="Your,Keywords">
@@ -22,7 +22,7 @@
       <link href="css/ddlevelsmenu-base.css" rel="stylesheet">
       <link href="css/ddlevelsmenu-topbar.css" rel="stylesheet">
       <!-- Countdown -->
-      <link href="css/jquery.countdown.css" rel="stylesheet">     
+      <link href="css/jquery.countdown.css" rel="stylesheet">  
 		<!-- Font awesome CSS -->
 		<link href="css/font-awesome.min.css" rel="stylesheet">		
 		<!-- Custom CSS -->
@@ -159,7 +159,7 @@
       <!-- Page title -->
       <div class="page-title">
          <div class="container">
-            <h2><i class="icon-desktop color"></i> Page Title <small>Subtext for header</small></h2>
+            <h2><i class="icon-desktop color"></i> My Account <small>Subtext for header</small></h2>
             <hr />
          </div>
       </div>
@@ -167,9 +167,100 @@
       
       <!-- Page content -->
       
-      <div class="page-content blocky">
+      <div class="account-content">
          <div class="container">
             
+            <div class="row">
+               <div class="col-md-3">
+                  <div class="sidey">
+                     <ul class="nav">
+                         <li><a href="account.html">My Account</a></li>
+                         <li><a href="wishlist.html">Wish List</a></li>
+                         <li><a href="orderhistory.html">Order History</a></li>                         
+                         <li><a href="editprofile.html">Edit Profile</a></li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="col-md-9">
+                  <h3><i class="icon-user color"></i> &nbsp;Edit Profile</h3>
+                  <!-- Your details -->
+                  <form class="form-horizontal" role="form">
+                    <div class="form-group">
+                      <label for="inputName" class="col-md-2 control-label">Name</label>
+                      <div class="col-md-4">
+                        <input type="text" class="form-control" id="inputName" placeholder="Name">
+                      </div>
+                    </div>            
+                    <div class="form-group">
+                      <label for="inputEmail1" class="col-md-2 control-label">Email</label>
+                      <div class="col-md-4">
+                        <input type="email" class="form-control" id="inputEmail1" placeholder="Email">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="inputPhone" class="col-md-2 control-label">Phone Number</label>
+                      <div class="col-md-4">
+                        <input type="text" class="form-control" id="inputPhone" placeholder="Phone">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="inputCountry" class="col-md-2 control-label">Country</label>
+                      <div class="col-md-4">
+                        <select class="form-control">
+                          <option>Select Country</option>
+                          <option>USA</option>
+                          <option>India</option>
+                          <option>Canada</option>
+                          <option>UK</option>
+                        </select>
+                      </div>
+                    </div>              
+                    <div class="form-group">
+                        <label for="inputAddress" class="col-md-2 control-label">Address</label>
+                        <div class="col-md-4">
+                           <textarea class="form-control" rows="3" placeholder="Address"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="inputZip" class="col-md-2 control-label">Zip Code</label>
+                      <div class="col-md-4">
+                        <input type="text" class="form-control" id="inputZip" placeholder="Zip Code">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="inputUsername" class="col-md-2 control-label">Username</label>
+                      <div class="col-md-4">
+                        <input type="text" class="form-control" id="inputUsername" placeholder="Username">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="inputPassword" class="col-md-2 control-label">Password</label>
+                      <div class="col-md-4">
+                        <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                      </div>
+                    </div>                    
+                    <div class="form-group">
+                      <div class="col-md-offset-2 col-md-4">
+                        <div class="checkbox">
+                          <label>
+                            <input type="checkbox"> Accept Terms & Conditions
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <hr />
+                    <div class="form-group">
+                      <div class="col-md-offset-2 col-md-10">
+                        <button type="submit" class="btn btn-danger">Save Changes</button>
+                        <button type="reset" class="btn btn-default">Reset</button>
+                      </div>
+                    </div>
+                  </form> 
+                   
+               </div>
+            </div>
+            
+            <div class="sep-bor"></div>
          </div>
       </div>
      

@@ -2,9 +2,12 @@
 <div class="sidey">
   <div class="side-cont">
     <ul class="nav">
+
+      <!-- Business Intelligence -->
       <li class="has_submenu">
         <a href="#">
-          <i class="fa fa-bar-chart-o"></i> Business Intelligence
+          <i class="fa fa-bar-chart-o"></i>
+          Business Intelligence
           <span class="caret pull-right"></span>
         </a>
         <ul>
@@ -13,6 +16,37 @@
           <li>{{#link-to 'product.index' tagName='a'}}Product Reports{{/link-to}}</li>
           <li>{{#link-to 'marketting.index' tagName='a'}}Marketting Reports{{/link-to}}</li>
           <li>{{#link-to 'accounting.index' tagName='a'}}Accounting Reports{{/link-to}}</li>
+        </ul>
+      </li>
+
+      <!-- Split Testing -->
+      <li class="has_submenu">
+        <a href="#">
+          <i class="fa fa-random"></i>
+          Split Testing
+          <span class="caret pull-right"></span>
+        </a>
+        <ul>
+          <li>{{#link-to 'icm.index' tagName='a'}}Instant Checkmate{{/link-to}}</li>
+          <li>{{#link-to 'rp.index' tagName='a'}}Reverse Phone{{/link-to}}</li>
+          <li>{{#link-to 'ud.index' tagName='a'}}Universal Dashboard{{/link-to}}</li>
+          <li>{{#link-to 'fqh.index' tagName='a'}}First Quote Health{{/link-to}}</li>
+        </ul>
+      </li>
+
+      <!-- Affiliate Management -->
+      <li class="has_submenu">
+        <a href="#">
+          <i class="fa fa-group"></i>
+          Affiliate Management
+          <span class="caret pull-right"></span>
+        </a>
+        <ul>
+          <li>{{#link-to 'affiliate.index' tagName='a'}}Affiliates{{/link-to}}</li>
+          <li>{{#link-to 'affiliate.campaign' tagName='a'}}Campaigns{{/link-to}}</li>
+          <li>{{#link-to 'affiliate.pixel' tagName='a'}}Pixels{{/link-to}}</li>
+          <li>{{#link-to 'affiliate.mapper' tagName='a'}}Mapper{{/link-to}}</li>
+          <li>{{#link-to 'affiliate.disowner' tagName='a'}}Disowner{{/link-to}}</li>
         </ul>
       </li>
     </ul>

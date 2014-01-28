@@ -12,6 +12,7 @@ App.Router.map(function() {
     this.route('settings', {path: '/settings/:id'});
   });
 
+  // Business Intelligence
   this.resource('bi', function() {
     this.route('company');
     this.resource('executive', function() {
@@ -31,6 +32,49 @@ App.Router.map(function() {
       this.route('products');
     });
   });
+
+  // Split Testing
+  this.resource('split', function() {
+    this.resource('icm', function() {
+      this.route('test');
+      this.route('variation');
+      this.route('event');
+      this.route('section');
+    });
+    this.resource('rp', function() {
+      this.route('test');
+      this.route('variation');
+      this.route('event');
+      this.route('section');
+    });
+    this.resource('ud', function() {
+      this.route('test');
+      this.route('variation');
+      this.route('event');
+      this.route('section');
+    });
+    this.resource('fqh', function() {
+      this.route('test');
+      this.route('variation');
+      this.route('event');
+      this.route('section');
+    });
+  });
+
+  // Affiliate Management
+  this.resource('affiliate', function() {
+    this.resource('affiliate', function() {
+      this.route('active');
+      this.route('archied');
+    });
+    this.route('campaign');
+    this.route('pixel');
+    this.route('mapper');
+    this.route('disowner');
+  });
+
+  // Customer Feedback
+  this.route('customer');
 
 });
 

@@ -43,8 +43,7 @@ app.post('/auth', function(req, res) {
 });
 
 
-
-app.get('*', function (req, res) { res.sendfile(path.join(__dirname, 'app/index.html')); });
+app.get('*', function (req, res) { res.sendfile(path.join(__dirname, 'public/dist/index.html')); });
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

@@ -15,12 +15,20 @@ module.exports = function(grunt) {
     concat: {
       dist: {
         src : [
-          'app/plugins/**/*.js',
+          'app/core/jquery.js',
+          'app/core/jquery-ui-1.10.2.custom.min.js',
+          'app/core/handlebars.js',
+          'app/core/ember.js',
+          'app/core/ember-model.js',
+          'app/core/bootstrap.min.js',
+          'app/core/bootstrap-switch.min.js',
+          'app/core/bootstrap-datetimepicker.min.js',
+          'app/core/html5shiv.js',
+          'app/core/respond.min.js',
+          'app/core/custom.js',
+          'public/dist/templates.js',
           'app/app.js',
-          'app/store.js',
           'app/router.js',
-          'app/adapter.js',
-          'app/helpers/**/*.js',
           'app/routes/authenticated.js',
           'app/routes/**/*.js',
           'app/models/**/*.js',
@@ -36,10 +44,23 @@ module.exports = function(grunt) {
      * uglify the js file for dist
      */
     uglify: {
-      files: {
-        'public/dist/app.js' : [
-          'public/dist/app.js'
-        ]
+      options: {
+        mangle: {
+          except: ['jQuery']
+        },
+        report: 'gzip',
+        compress: {
+          drop_console: true
+        },
+        banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
+          '<%= grunt.template.today("yyyy-mm-dd") %> */'
+      },
+      my_target:{
+        files: {
+          'public/dist/app.js' : [
+            'public/dist/app.js'
+          ]
+        }
       }
     },
 
@@ -78,12 +99,12 @@ module.exports = function(grunt) {
     watch: {
       scripts: {
         files: [
+          'app/core/custom.js',
           'app/helpers/*.js',
           'app/app.js',
           'app/router.js',
           'app/adapter.js',
           'app/helpers/**/*.js',
-          'app/plugins/**/*.js',
           'app/routes/**/*.js',
           'app/controllers/**/*.js',
           'app/models/**/*.js',
@@ -104,7 +125,28 @@ module.exports = function(grunt) {
           'app/templates/**/*.hbs',
           'app/templates/*.hbs'
         ],
-        tasks: ['ember_handlebars']
+        tasks: ['ember_handlebars','concat']
+      },
+      livereload: {
+        files: [
+          'public/dist/app.css',
+          'public/dist/app.js'
+        ],
+        options: {
+          livereload: true
+        }
+      }
+    },
+
+    htmlmin: {
+      dist: {
+        options: {
+          removeComments: true,
+          collapseWhitespace: true
+        },
+        files: {
+          'public/dist/index.html': 'app/index.html'
+        }
       }
     },
 
@@ -116,21 +158,22 @@ module.exports = function(grunt) {
           cleancss: true
         },
         files: {
-          "public/assets/css/theme.css": "app/styles/theme.less"
+          "public/dist/app.css": "app/styles/theme.less"
         }
       }
     }
 
   });
- 
+
   // load the tasks
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-ember-handlebars');
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-watch');
- 
+  grunt.loadNpmTasks('grunt-contrib-htmlmin');
+
   // define custom tasks
-  grunt.registerTask('default', ['concat','ember_handlebars', 'less', 'watch']);
-  grunt.registerTask('dist', ['concat','uglify','ember_handlebars']);
+  grunt.registerTask('default', ['ember_handlebars','concat','less','htmlmin','watch']);
+  grunt.registerTask('dist', ['ember_handlebars','concat','less','uglify','htmlmin']);
 }

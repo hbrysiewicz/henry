@@ -6,7 +6,6 @@ App.LoginController = Ember.Controller.extend({
       var self = this,
           data = this.getProperties('username', 'password');
 
-      console.log('login');
       self.set('errorMessage', null);
       $.post('/auth', data).then(function(response) {
 

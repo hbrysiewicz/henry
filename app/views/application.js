@@ -1,4 +1,4 @@
-App.IndexView = Ember.View.extend({
+App.ApplicationView = Ember.View.extend({
   didInsertElement: function() {
 
     $(window).resize(function() {

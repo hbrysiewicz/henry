@@ -27,3 +27,16 @@ App.AuthenticatedRoute = Ember.Route.extend({
     }
   }
 });
+
+App.LoginRoute = Ember.Route.extend({
+  setupController: function(controller, context) {
+    controller.reset();
+  }
+});
+
+App.LogoutRoute = Ember.Route.extend({
+  beforeModel: function(controller, context) {
+    this.controllerFor('login').set('token', '');
+    this.transitionTo('login');
+  }
+});

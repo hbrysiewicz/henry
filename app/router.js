@@ -14,23 +14,23 @@ App.Router.map(function() {
 
   this.resource('bi', function() {
     this.route('company');
+    this.resource('executive', function() {
+      this.route('dashboard');
+      this.route('ltv');
+    });
+    this.resource('product', function() {
+      this.route('orders');
+      this.route('gateway');
+      this.route('dataProviders');
+    });
+    this.resource('marketting', function() {
+      this.route('trafficSources');
+      this.route('affiliates');
+    });
+    this.resource('accounting', function() {
+      this.route('products');
+    });
   });
 
-  // Admin Routes
-  this.resource('admin', function() {
-    this.resource("users", function(){
-      this.route("create", { path: '/create' });
-      this.route("edit", { path: '/edit/:id' });
-    });
-    this.resource("roles", function(){
-      this.route("create");
-      this.route("edit", { path: '/edit/:id' });
-    });
-    this.resource("resources", function(){
-      this.route("create");
-      this.route("edit", { path: '/edit/:id' });
-      this.route("delete", { path: '/delete/:id' });
-    });
-  })
 });
 

@@ -2,6 +2,7 @@ App.User = Ember.Model.extend({
   firstName: Ember.attr(),
   lastName: Ember.attr(),
   role: Ember.attr(),
+  username: Ember.attr(),
   email: Ember.attr(),
   icon: Ember.attr(),
   admin: Ember.computed.equal('role',4),
@@ -23,6 +24,7 @@ App.User.FIXTURES = [
     firstName: "Heather",
     lastName: "Brysiewicz",
     role: 4,
+    username: 'admin',
     email: "heather.brysiewicz@thecontrolgroup.com",
     icon: null
   },
@@ -31,6 +33,7 @@ App.User.FIXTURES = [
     firstName: "Andrew",
     lastName: "Reedy",
     role: 7,
+    username: 'andrew',
     email: "andrew.reedy@thecontrolgroup.com",
     icon: null
   }

@@ -10,6 +10,12 @@
         </div>
         <!-- Page title -->
 
+        {{#if errorMessage}}
+          <div class="alert alert-warning">
+            {{errorMessage}}
+          </div>
+        {{/if}}
+
         <br />
         <form class="form-horizontal" role="form" {{action login on="submit"}}>
           <div class="form-group">

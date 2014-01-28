@@ -66,7 +66,7 @@ module.exports = function(grunt) {
 
     /**
      * precompile template assets
-     */    
+     */
     ember_handlebars: {
       options: {
           processName: function(filePath) {
